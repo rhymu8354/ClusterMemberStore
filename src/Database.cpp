@@ -22,12 +22,39 @@ namespace ClusterMemberStore {
         return !(*this == other);
     }
 
+    void PrintTo(
+        const ColumnDefinition& columnDefinition,
+        std::ostream* os
+    ) {
+        *os << '{';
+        *os << "name: " << columnDefinition.name;
+        *os << ", type: " << columnDefinition.type;
+        *os << ", isKey: " << (columnDefinition.isKey ? "true" : "false");
+        *os << '}';
+    }
+
     bool TableDefinition::operator==(const TableDefinition& other) const {
         return columnDefinitions == other.columnDefinitions;
     }
 
     bool TableDefinition::operator!=(const TableDefinition& other) const {
         return !(*this == other);
+    }
+
+    void PrintTo(
+        const TableDefinition& tableDefinition,
+        std::ostream* os
+    ) {
+        *os << '{';
+        bool first = true;
+        for (const auto& column: tableDefinition.columnDefinitions) {
+            if (!first) {
+                *os << ", ";
+            }
+            first = false;
+            PrintTo(column, os);
+        }
+        *os << '}';
     }
 
 }

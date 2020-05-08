@@ -35,6 +35,22 @@ namespace ClusterMemberStore {
         bool operator!=(const ColumnDefinition& other) const;
     };
 
+    /**
+     * This is a support function for Google Test to print out
+     * values of the ColumnDefinition type.
+     *
+     * @param[in] columnDefinition
+     *     This is the ColumnDefinition value to print.
+     *
+     * @param[in] os
+     *     This points to the stream to which to print the
+     *     ColumnDefinition value.
+     */
+    void PrintTo(
+        const ColumnDefinition& columnDefinition,
+        std::ostream* os
+    );
+
     enum class DataType {
         Text,
         Real,
@@ -88,6 +104,22 @@ namespace ClusterMemberStore {
         bool operator==(const TableDefinition& other) const;
         bool operator!=(const TableDefinition& other) const;
     };
+
+    /**
+     * This is a support function for Google Test to print out
+     * values of the TableDefinition type.
+     *
+     * @param[in] tableDefinition
+     *     This is the TableDefinition value to print.
+     *
+     * @param[in] os
+     *     This points to the stream to which to print the
+     *     TableDefinition value.
+     */
+    void PrintTo(
+        const TableDefinition& tableDefinition,
+        std::ostream* os
+    );
 
     using TableDefinitions = std::unordered_map< std::string, TableDefinition >;
 

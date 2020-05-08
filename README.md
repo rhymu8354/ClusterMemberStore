@@ -37,11 +37,13 @@ There are two distinct steps in the build process:
 ### Prerequisites
 
 * [CMake](https://cmake.org/) version 3.8 or newer
-* C++11 toolchain compatible with CMake for your development platform (e.g. [Visual Studio](https://www.visualstudio.com/) on Windows)
+* C++11 toolchain compatible with CMake for your development platform (e.g.
+  [Visual Studio](https://www.visualstudio.com/) on Windows)
 
 ### Build system generation
 
-Generate the build system using [CMake](https://cmake.org/) from the solution root.  For example:
+Generate the build system using [CMake](https://cmake.org/) from the solution
+root.  For example:
 
 ```bash
 mkdir build
