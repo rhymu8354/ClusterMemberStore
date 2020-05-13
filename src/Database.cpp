@@ -6,8 +6,22 @@
  */
 
 #include <ClusterMemberStore/Database.hpp>
+#include <ostream>
 
 namespace ClusterMemberStore {
+
+    ColumnDefinition::ColumnDefinition(
+        const std::string& name,
+        const std::string& type,
+        bool isKey,
+        bool isUnique
+    )
+        : name(name)
+        , type(type)
+        , isKey(isKey)
+        , isUnique(isUnique)
+    {
+    }
 
     bool ColumnDefinition::operator==(const ColumnDefinition& other) const {
         return (

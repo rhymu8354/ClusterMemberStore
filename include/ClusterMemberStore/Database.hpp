@@ -31,6 +31,13 @@ namespace ClusterMemberStore {
         bool isKey = false;
         bool isUnique = false;
 
+        ColumnDefinition(
+            const std::string& name,
+            const std::string& type,
+            bool isKey = false,
+            bool isUnique = false
+        );
+
         bool operator==(const ColumnDefinition& other) const;
         bool operator!=(const ColumnDefinition& other) const;
     };
