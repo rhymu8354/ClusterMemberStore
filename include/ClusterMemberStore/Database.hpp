@@ -48,7 +48,7 @@ namespace ClusterMemberStore {
 
     struct BuildStatementResults {
         std::shared_ptr< PreparedStatement > statement;
-        bool error = false;
+        std::string error;
     };
 
     /**
@@ -63,7 +63,7 @@ namespace ClusterMemberStore {
         virtual BuildStatementResults BuildStatement(
             const std::string& statement
         ) = 0;
-        virtual bool ExecuteStatement(const std::string& statement) = 0;
+        virtual std::string ExecuteStatement(const std::string& statement) = 0;
 
         // These are designed for use in obtaining blobs holding the complete
         // state of the database (schema and data) and using them to replace
