@@ -79,7 +79,7 @@ namespace DatabaseAbstractions {
         // state of the database (schema and data) and using them to replace
         // the database using those blobs.
         virtual Blob CreateSnapshot() = 0;
-        virtual void InstallSnapshot(const Blob& blob) = 0;
+        virtual std::string InstallSnapshot(const Blob& blob) = 0;
     };
 
 }
