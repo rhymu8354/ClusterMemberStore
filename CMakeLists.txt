@@ -1,11 +1,11 @@
-# CMakeLists.txt for ClusterMemberStore
+# CMakeLists.txt for DatabaseAbstractions
 
 cmake_minimum_required(VERSION 3.8)
-set(This ClusterMemberStore)
+set(This DatabaseAbstractions)
 
 set(Headers
-    include/ClusterMemberStore/Database.hpp
-    include/ClusterMemberStore/Value.hpp
+    include/DatabaseAbstractions/Database.hpp
+    include/DatabaseAbstractions/Value.hpp
 )
 
 set(Sources

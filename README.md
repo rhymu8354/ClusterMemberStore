@@ -1,4 +1,4 @@
-# ClusterMemberStore
+# DatabaseAbstractions
 
 This library is intended for use in systems where data is stored for exlusive
 use by a member of a larger cluster (such as in the Raft Consensus Algorithm).
@@ -7,7 +7,7 @@ its data on a relational database.
 
 ## Usage
 
-The `ClusterMemberStore::Database` class is a pure abstract interface class
+The `DatabaseAbstractions::Database` class is a pure abstract interface class
 meant to be implemented for whatever actual database is chosen for the
 application.  It represents the requirements of the application, in terms of a
 high-level, generic set of database access methods.

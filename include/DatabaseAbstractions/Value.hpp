@@ -3,7 +3,7 @@
 /**
  * @file Value.hpp
  *
- * This file defines the ClusterMemberStore::Value class, which represents
+ * This file defines the DatabaseAbstractions::Value class, which represents
  * an element of data either sent to or retrieved from a database.
  */
 
@@ -13,7 +13,7 @@
 #include <stdint.h>
 #include <string>
 
-namespace ClusterMemberStore {
+namespace DatabaseAbstractions {
 
     class Value {
         // Types

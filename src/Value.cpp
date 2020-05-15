@@ -2,16 +2,16 @@
  * @file Value.cpp
  *
  * This file contains the implementation
- * of the ClusterMemberStore::Value class.
+ * of the DatabaseAbstractions::Value class.
  */
 
-#include <ClusterMemberStore/Value.hpp>
+#include <DatabaseAbstractions/Value.hpp>
 #include <stdint.h>
 #include <string>
 
 namespace {
 
-    using namespace ClusterMemberStore;
+    using namespace DatabaseAbstractions;
 
     union Data {
         std::string* error;
@@ -23,7 +23,7 @@ namespace {
 
 }
 
-namespace ClusterMemberStore {
+namespace DatabaseAbstractions {
 
     struct Value::Impl {
         // Properties

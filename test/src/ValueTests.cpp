@@ -4,13 +4,13 @@
  * This module contains unit tests of the Database::Value class.
  */
 
-#include <ClusterMemberStore/Value.hpp>
+#include <DatabaseAbstractions/Value.hpp>
 #include <gtest/gtest.h>
 #include <sstream>
 #include <string>
 #include <vector>
 
-using namespace ClusterMemberStore;
+using namespace DatabaseAbstractions;
 
 /**
  * This is the test fixture for these tests, providing common

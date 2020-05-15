@@ -1,7 +1,7 @@
-# CMakeLists.txt for ClusterMemberStoreTests
+# CMakeLists.txt for DatabaseAbstractionsTests
 
 cmake_minimum_required(VERSION 3.8)
-set(This ClusterMemberStoreTests)
+set(This DatabaseAbstractionsTests)
 
 set(Sources
     src/ValueTests.cpp
@@ -14,7 +14,7 @@ set_target_properties(${This} PROPERTIES
 
 target_link_libraries(${This} PUBLIC
     gtest_main
-    ClusterMemberStore
+    DatabaseAbstractions
 )
 
 add_test(

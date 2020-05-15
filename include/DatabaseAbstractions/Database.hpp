@@ -13,19 +13,28 @@
 
 #include "Value.hpp"
 
+#include <initializer_list>
 #include <memory>
 #include <stddef.h>
 #include <stdint.h>
 #include <string>
 #include <vector>
 
-namespace ClusterMemberStore {
+namespace DatabaseAbstractions {
 
     using Blob = std::vector< uint8_t >;
 
     struct StepStatementResults {
+        /**
+         * This flag is set if there are no more rows to fetch with the
+         * statement.
+         */
         bool done = false;
-        bool error = false;
+
+        /**
+         * This gets a value if stepping the statement results in an error.
+         */
+        std::string error;
     };
 
     /**
@@ -39,8 +48,9 @@ namespace ClusterMemberStore {
     public:
         virtual void BindParameter(
             int index,
-            Value& value
+            const Value& value
         ) = 0;
+        virtual void BindParameters(std::initializer_list< const Value > values) = 0;
         virtual Value FetchColumn(int index, Value::Type type) = 0;
         virtual void Reset() = 0;
         virtual StepStatementResults Step() = 0;
