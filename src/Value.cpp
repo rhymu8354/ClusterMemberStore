@@ -66,7 +66,7 @@ namespace DatabaseAbstractions {
             } break;
 
             case Type::Error: {
-                impl_->data.error = new std::string(other);
+                impl_->data.error = new std::string((const std::string&)other);
             } break;
 
             case Type::Integer: {
@@ -78,7 +78,7 @@ namespace DatabaseAbstractions {
             } break;
 
             case Type::Text: {
-                impl_->data.text = new std::string(other);
+                impl_->data.text = new std::string((const std::string&)other);
             } break;
 
             default: break;
@@ -306,7 +306,7 @@ namespace DatabaseAbstractions {
             } break;
 
             case Value::Type::Error: {
-                *os << "error(\"" << ((std::string)value) << "\")";
+                *os << "error(\"" << ((const std::string&)value) << "\")";
             } break;
 
             case Value::Type::Integer: {
@@ -322,7 +322,7 @@ namespace DatabaseAbstractions {
             } break;
 
             case Value::Type::Text: {
-                *os << "\"" << ((std::string)value) << "\"";
+                *os << "\"" << ((const std::string&)value) << "\"";
             } break;
 
             default: {

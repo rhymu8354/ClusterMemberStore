@@ -51,7 +51,7 @@ TEST_F(ValueTests, Assign_Text_C_String_Value) {
 
     // Assert
     EXPECT_EQ(Value::Type::Text, value.GetType());
-    EXPECT_EQ(std::string("Hello!"), (std::string)value);
+    EXPECT_EQ(std::string("Hello!"), (const std::string&)value);
 }
 
 TEST_F(ValueTests, Construct_Text_Copy_Value) {
@@ -63,7 +63,7 @@ TEST_F(ValueTests, Construct_Text_Copy_Value) {
 
     // Assert
     EXPECT_EQ(Value::Type::Text, value.GetType());
-    EXPECT_EQ(hello, (std::string)value);
+    EXPECT_EQ(hello, (const std::string&)value);
 }
 
 TEST_F(ValueTests, Assign_Text_Copy_Value) {
@@ -76,7 +76,7 @@ TEST_F(ValueTests, Assign_Text_Copy_Value) {
 
     // Assert
     EXPECT_EQ(Value::Type::Text, value.GetType());
-    EXPECT_EQ(hello, (std::string)value);
+    EXPECT_EQ(hello, (const std::string&)value);
 }
 
 TEST_F(ValueTests, Construct_Text_Move_Value) {
@@ -88,7 +88,7 @@ TEST_F(ValueTests, Construct_Text_Move_Value) {
 
     // Assert
     EXPECT_EQ(Value::Type::Text, value.GetType());
-    EXPECT_EQ(std::string("Hello!"), (std::string)value);
+    EXPECT_EQ(std::string("Hello!"), (const std::string&)value);
 }
 
 TEST_F(ValueTests, Assign_Text_Move_Value) {
@@ -101,7 +101,7 @@ TEST_F(ValueTests, Assign_Text_Move_Value) {
 
     // Assert
     EXPECT_EQ(Value::Type::Text, value.GetType());
-    EXPECT_EQ(std::string("Hello!"), (std::string)value);
+    EXPECT_EQ(std::string("Hello!"), (const std::string&)value);
 }
 
 TEST_F(ValueTests, Construct_Real_Value) {
